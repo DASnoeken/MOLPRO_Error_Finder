@@ -1,0 +1,11 @@
+This program can read MOLPRO output files and find any errors or other problems, like unconverged Hartree-Fock.
+To use the program, compile it using g++ -o err main.cc and run it using "err <jobname> <T1 diagnostic cutoff> <ycp/nocp> <T1 diagnostic cutoff for counterpoise>".
+
+If you use a ab-initio method that gives you a T1 diagnostic, you can enter a cutoff value. Meaning that values lower than the cutoff value will be ignored.
+Do remember that values of T1 higher than 0.02 are considered unreliable.
+During execution of the program you will be asked to enter the number of methods performed that give out T1 diagnostics.
+Please note that e.g. the CCSD(T) will count for 2, as an RMP2 calculation is performed prior to the CCSD(T) calculation.
+
+If you use a BSSE correction (counterpoise correction) in your MOLPRO program, you can choose to ignore these by using the nocp option.
+Alternatively you can use ycp and give a separate option for the T1 cutoff for the BSSE correction calculations.
+If you use no option, then the BSSE will be evaluated with the same T1 diagnostic as entered before.

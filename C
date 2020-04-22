@@ -1,0 +1,8 @@
+#!/bin/bash
+echo 'Compiling errs.cc'
+g++ -std=c++11 -g -o err errs.cc
+echo 'Done'
+echo 'Changing permissions'
+chmod 750 err
+echo 'Done'
+echo 'All done'
